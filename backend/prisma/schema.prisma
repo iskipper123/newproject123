@@ -1,0 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model pages {
+  id         String    @id @default(uuid()) @db.Uuid
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at DateTime  @default(now()) @updatedAt @db.Timestamptz(6)
+  slug       String    @unique
+  title      String
+  content    String?
+  type       String?   @db.VarChar(50)
+
+  @@map("pages")
+}
+
+model portfolio_items {
+  id          String    @id @default(uuid()) @db.Uuid
+  created_at  DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at  DateTime  @default(now()) @updatedAt @db.Timestamptz(6)
+  title       String
+  description String?
+  image_url   String?
+  project_url String?
+  tags        String[]  @db.Text
+
+  @@map("portfolio_items")
+}
+
+model blog_posts {
+  id           String    @id @default(uuid()) @db.Uuid
+  created_at   DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at   DateTime  @default(now()) @updatedAt @db.Timestamptz(6)
+  slug         String    @unique
+  title        String
+  summary      String?
+  content      String?
+  author_id    String?   @db.Uuid // Связь с таблицей users (если потребуется)
+  published_at DateTime? @db.Timestamptz(6)
+  is_published Boolean   @default(false)
+
+  @@map("blog_posts")
+}
+
+model users {
+  id         String   @id @db.Uuid // Связь с таблицей auth.users
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  updated_at DateTime @default(now()) @updatedAt @db.Timestamptz(6)
+  full_name  String?
+  role       String?  @db.VarChar(50) // например, 'admin', 'editor'
+
+  @@map("users")
+}
+
+model forms {
+  id        String   @id @default(uuid()) @db.Uuid
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  form_type String   @db.VarChar(50)
+  data      Json
+
+  @@map("forms")
+}
+
+model logs {
+  id         String   @id @default(uuid()) @db.Uuid
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  user_id    String?  @db.Uuid // Связь с таблицей auth.users
+  action     String
+  details    Json?
+
+  @@map("logs")
+}
+
+model settings {
+  id         String   @id @default(uuid()) @db.Uuid
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  updated_at DateTime @default(now()) @updatedAt @db.Timestamptz(6)
+  key        String   @unique
+  value      Json?
+
+  @@map("settings")
+}
