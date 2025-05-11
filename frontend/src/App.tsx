@@ -8,6 +8,7 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Estimation from './pages/Estimation'
 
+import type { JSX } from 'react'
 // Import admin panel components
 import Login from './adminpanel/Login'
 import Dashboard from './adminpanel/Dashboard'
