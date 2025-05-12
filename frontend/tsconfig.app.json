@@ -19,7 +19,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["react"],
+    "types": ["react", "node"],
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"]
