@@ -1,3 +1,5 @@
 node_modules
 .env
 dist
+# Ignore generated Prisma client files
+backend/src/generated/prisma/
