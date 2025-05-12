@@ -7,131 +7,209 @@ const Home: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="home-page" // Added a class for potential styling
+      className="home-page bg-black text-white min-h-screen" // Applied dark theme classes
     >
       {/* Header Section */}
-      <header className="site-header">
-        <div className="container mx-auto flex justify-between items-center py-4">
-          <div className="logo">Logitect</div>
+      <header className="site-header bg-black text-white py-4 shadow-lg">
+        {' '}
+        {/* Added shadow for depth */}
+        <div className="container mx-auto flex justify-between items-center px-4">
+          {' '}
+          {/* Added horizontal padding */}
+          <div className="logo text-2xl font-bold text-blue-500">
+            Logitect
+          </div>{' '}
+          {/* Applied accent color */}
           <nav>
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-6">
+              {' '}
+              {/* Increased spacing */}
               <li>
-                <a href="#">Acasă</a>
+                <a
+                  href="#"
+                  className="hover:text-blue-500 transition duration-300"
+                >
+                  Acasă
+                </a>
+              </li>{' '}
+              {/* Added hover effect */}
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-blue-500 transition duration-300"
+                >
+                  Servicii
+                </a>
               </li>
               <li>
-                <a href="#">Servicii</a>
+                <a
+                  href="#"
+                  className="hover:text-blue-500 transition duration-300"
+                >
+                  Portofoliu
+                </a>
               </li>
               <li>
-                <a href="#">Portofoliu</a>
+                <a
+                  href="#"
+                  className="hover:text-blue-500 transition duration-300"
+                >
+                  Prețuri
+                </a>
               </li>
               <li>
-                <a href="#">Prețuri</a>
+                <a
+                  href="#"
+                  className="hover:text-blue-500 transition duration-300"
+                >
+                  Blog
+                </a>
               </li>
               <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
+                <a
+                  href="#"
+                  className="hover:text-blue-500 transition duration-300"
+                >
+                  Contact
+                </a>
               </li>
             </ul>
           </nav>
-          <button className="btn-primary">Solicită Ofertă</button>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+            Solicită Ofertă
+          </button>{' '}
+          {/* Styled button */}
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="hero-section bg-gray-100 py-20">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">
+      <section className="hero-section bg-gray-900 text-white py-20 md:py-32">
+        {' '}
+        {/* Darker background, increased padding */}
+        <div className="container mx-auto text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Soluții Premium de Dezvoltare Web
-          </h1>
-          <h2 className="text-3xl mb-6">Creăm Excelență Digitală</h2>
-          <p className="text-lg mb-8">
+          </h1>{' '}
+          {/* Larger text */}
+          <h2 className="text-2xl md:text-4xl mb-6 text-gray-300">
+            Creăm Excelență Digitală
+          </h2>{' '}
+          {/* Slightly lighter text */}
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
             Transformăm idei în experiențe captivante prin design elegant și
             dezvoltare de ultimă generație.
           </p>
-          <div className="flex justify-center space-x-4">
-            <button className="btn-primary">Începe acum</button>
-            <button className="btn-secondary">Vezi Portofoliu</button>
+          <div className="flex justify-center space-x-4 mb-12">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+              Începe acum
+            </button>
+            <button className="border border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-black transition duration-300 text-lg">
+              Vezi Portofoliu
+            </button>{' '}
+            {/* Styled secondary button */}
           </div>
-          <div className="client-logos mt-12 flex justify-center space-x-8">
+          <div className="client-logos flex justify-center items-center flex-wrap gap-8 opacity-75">
+            {' '}
+            {/* Added gap, wrap, opacity */}
             {/* Replace with actual image tags */}
-            <div className="logo-placeholder">Logo client</div>
-            <div className="logo-placeholder">Logo client</div>
-            <div className="logo-placeholder">Logo client</div>
-            <div className="logo-placeholder">Logo client</div>
+            <div className="logo-placeholder text-gray-400 text-sm">
+              Logo client
+            </div>
+            <div className="logo-placeholder text-gray-400 text-sm">
+              Logo client
+            </div>
+            <div className="logo-placeholder text-gray-400 text-sm">
+              Logo client
+            </div>
+            <div className="logo-placeholder text-gray-400 text-sm">
+              Logo client
+            </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="services-section py-20">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+      <section className="services-section py-20 md:py-32 bg-black text-white">
+        {' '}
+        {/* Dark background */}
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Servicii Complete
           </h2>
-          <p className="text-xl text-center mb-16">
+          <p className="text-lg md:text-xl text-center mb-16 max-w-3xl mx-auto text-gray-300">
             Soluții digitale complete concepute pentru a îmbunătăți prezența
             online și a stimula creșterea afacerii.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="service-item p-6 border rounded-lg">
-              <h3 className="text-2xl font-semibold mb-4">Dezvoltare Web</h3>
-              <p className="mb-4">
+            <div className="service-item p-6 border border-gray-700 rounded-lg bg-gray-900 hover:border-blue-500 transition duration-300">
+              {' '}
+              {/* Styled card */}
+              <h3 className="text-xl font-semibold mb-4 text-blue-500">
+                Dezvoltare Web
+              </h3>{' '}
+              {/* Accent color */}
+              <p className="mb-4 text-gray-300">
                 Dezvoltare full-stack cu framework-uri moderne și arhitectură
-                scalabilă для afaceri de toate dimensiunile.
+                scalabilă pentru afaceri de toate dimensiunile.
               </p>
-              <ul className="list-disc list-inside mb-6">
+              <ul className="list-disc list-inside mb-6 text-gray-300">
                 <li>Aplicații web personalizate</li>
                 <li>Soluții e-commerce avansate</li>
                 <li>Implementare CMS și sisteme de administrare</li>
               </ul>
-              <a href="#" className="text-blue-600 hover:underline">
+              <a href="#" className="text-blue-500 hover:underline">
                 Află mai multe
-              </a>
+              </a>{' '}
+              {/* Accent color */}
             </div>
-            <div className="service-item p-6 border rounded-lg">
-              <h3 className="text-2xl font-semibold mb-4">Design UI/UX</h3>
-              <p className="mb-4">
+            <div className="service-item p-6 border border-gray-700 rounded-lg bg-gray-900 hover:border-blue-500 transition duration-300">
+              <h3 className="text-xl font-semibold mb-4 text-blue-500">
+                Design UI/UX
+              </h3>
+              <p className="mb-4 text-gray-300">
                 Experiențe de design premium care îmbină estetica cu
                 funcționalitatea pentru un engagement sporit al utilizatorilor.
               </p>
-              <ul className="list-disc list-inside mb-6">
+              <ul className="list-disc list-inside mb-6 text-gray-300">
                 <li>Design interfață utilizator</li>
                 <li>Prototipuri interactive</li>
                 <li>Identitate vizuală</li>
               </ul>
-              <a href="#" className="text-blue-600 hover:underline">
+              <a href="#" className="text-blue-500 hover:underline">
                 Află mai multe
               </a>
             </div>
-            <div className="service-item p-6 border rounded-lg">
-              <h3 className="text-2xl font-semibold mb-4">SEO & Optimizare</h3>
-              <p className="mb-4">
+            <div className="service-item p-6 border border-gray-700 rounded-lg bg-gray-900 hover:border-blue-500 transition duration-300">
+              <h3 className="text-xl font-semibold mb-4 text-blue-500">
+                SEO & Optimizare
+              </h3>
+              <p className="mb-4 text-gray-300">
                 Strategii complete de SEO pentru creșterea vizibilității și
                 optimizarea indicatorilor de performanță.
               </p>
-              <ul className="list-disc list-inside mb-6">
+              <ul className="list-disc list-inside mb-6 text-gray-300">
                 <li>Audit tehnic SEO</li>
                 <li>Optimizare viteză</li>
                 <li>Strategie de conținut</li>
               </ul>
-              <a href="#" className="text-blue-600 hover:underline">
+              <a href="#" className="text-blue-500 hover:underline">
                 Află mai multe
               </a>
             </div>
-            <div className="service-item p-6 border rounded-lg">
-              <h3 className="text-2xl font-semibold mb-4">Marketing Digital</h3>
-              <p className="mb-4">
+            <div className="service-item p-6 border border-gray-700 rounded-lg bg-gray-900 hover:border-blue-500 transition duration-300">
+              <h3 className="text-xl font-semibold mb-4 text-blue-500">
+                Marketing Digital
+              </h3>
+              <p className="mb-4 text-gray-300">
                 Soluții de marketing bazate pe date pentru a dezvolta brandul și
                 a atrage clienți valoroși.
               </p>
-              <ul className="list-disc list-inside mb-6">
+              <ul className="list-disc list-inside mb-6 text-gray-300">
                 <li>Optimizare conversie</li>
                 <li>Configurare analytics</li>
                 <li>Automatizare marketing</li>
               </ul>
-              <a href="#" className="text-blue-600 hover:underline">
+              <a href="#" className="text-blue-500 hover:underline">
                 Află mai multe
               </a>
             </div>
@@ -140,66 +218,73 @@ const Home: React.FC = () => {
       </section>
 
       {/* Methodology Section */}
-      <section className="methodology-section bg-gray-100 py-20">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+      <section className="methodology-section bg-gray-900 text-white py-20 md:py-32">
+        {' '}
+        {/* Darker background */}
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Metodologia Noastră
           </h2>
-          <h3 className="text-3xl text-center mb-16">
+          <h3 className="text-2xl md:text-3xl text-center mb-16 text-gray-300">
             Procesul Nostru de Lucru
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="methodology-step">
-              <div className="step-number text-blue-600 text-5xl font-bold mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {' '}
+            {/* Changed to 4 columns on large screens */}
+            <div className="methodology-step p-6 border border-gray-700 rounded-lg bg-black">
+              {' '}
+              {/* Styled step card */}
+              <div className="step-number text-blue-500 text-5xl font-bold mb-4">
                 01
-              </div>
-              <h4 className="text-2xl font-semibold mb-4">
+              </div>{' '}
+              {/* Accent color */}
+              <h4 className="text-xl font-semibold mb-4">
                 Analiză & Strategie
               </h4>
-              <p>
+              <p className="text-gray-300">
                 Analizăm nevoile afacerii tale și definim obiectivele clare
                 pentru prezența ta online. Creăm o strategie personalizată
                 pentru a atinge aceste obiective.
               </p>
             </div>
-            <div className="methodology-step">
-              <div className="step-number text-blue-600 text-5xl font-bold mb-4">
+            <div className="methodology-step p-6 border border-gray-700 rounded-lg bg-black">
+              <div className="step-number text-blue-500 text-5xl font-bold mb-4">
                 02
               </div>
-              <h4 className="text-2xl font-semibold mb-4">
+              <h4 className="text-xl font-semibold mb-4">
                 Design & Prototipare
               </h4>
-              <p>
+              <p className="text-gray-300">
                 Dezvoltăm wireframe-uri și prototipuri interactive care reflectă
-                identitatea brandului tău и oferă o experiență optimă
+                identitatea brandului tău și oferă o experiență optimă
                 utilizatorilor.
               </p>
             </div>
-            <div className="methodology-step">
-              <div className="step-number text-blue-600 text-5xl font-bold mb-4">
+            <div className="methodology-step p-6 border border-gray-700 rounded-lg bg-black">
+              <div className="step-number text-blue-500 text-5xl font-bold mb-4">
                 03
               </div>
-              <h4 className="text-2xl font-semibold mb-4">
+              <h4 className="text-xl font-semibold mb-4">
                 Dezvoltare & Implementare
               </h4>
-              <p>
+              <p className="text-gray-300">
                 Transformăm designul în cod curat și eficient, implementând
                 toate funcționalitățile necesare și asigurând compatibilitatea
                 cu toate dispozitivele.
               </p>
             </div>
-            <div className="methodology-step">
-              <div className="step-number text-blue-600 text-5xl font-bold mb-4">
+            <div className="methodology-step p-6 border border-gray-700 rounded-lg bg-black">
+              <div className="step-number text-blue-500 text-5xl font-bold mb-4">
                 04
               </div>
-              <h4 className="text-2xl font-semibold mb-4">Testare & Lansare</h4>
-              <p>
+              <h4 className="text-xl font-semibold mb-4">Testare & Lansare</h4>
+              <p className="text-gray-300">
                 Testăm riguros toate aspectele site-ului pentru a asigura
                 performanță optimă și securitate maximă înainte de lansare.
               </p>
             </div>
           </div>
-          <p className="text-center text-xl mt-12">
+          <p className="text-center text-lg md:text-xl mt-12 max-w-3xl mx-auto text-gray-300">
             Comunicarea transparentă este esențială în fiecare etapă,
             asigurându-ne că rămâi informat și implicat pe tot parcursul
             dezvoltării proiectului tău.
@@ -208,75 +293,119 @@ const Home: React.FC = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="statistics-section py-20">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12">Cifre care Vorbesc</h2>
-          <h3 className="text-3xl mb-16">Rezultatele Noastre</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <section className="statistics-section py-20 md:py-32 bg-black text-white">
+        {' '}
+        {/* Dark background */}
+        <div className="container mx-auto text-center px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">
+            Cifre care Vorbesc
+          </h2>
+          <h3 className="text-2xl md:text-3xl mb-16 text-gray-300">
+            Rezultatele Noastre
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {' '}
+            {/* Changed to 4 columns on large screens */}
             <div className="stat-item">
-              <div className="text-blue-600 text-6xl font-bold">97%</div>
-              <div className="text-xl font-semibold">Satisfacție Clienți</div>
-              <p>Clienți mulțumiți care recomandă serviciile noastre</p>
+              <div className="text-blue-500 text-5xl md:text-6xl font-bold">
+                97%
+              </div>{' '}
+              {/* Accent color, larger text */}
+              <div className="text-lg md:text-xl font-semibold mt-2">
+                Satisfacție Clienți
+              </div>
+              <p className="text-gray-300">
+                Clienți mulțumiți care recomandă serviciile noastre
+              </p>
             </div>
             <div className="stat-item">
-              <div className="text-blue-600 text-6xl font-bold">15+</div>
-              <div className="text-xl font-semibold">Ani Experiență</div>
-              <p>În dezvoltarea soluțiilor digitale de top</p>
+              <div className="text-blue-500 text-5xl md:text-6xl font-bold">
+                15+
+              </div>
+              <div className="text-lg md:text-xl font-semibold mt-2">
+                Ani Experiență
+              </div>
+              <p className="text-gray-300">
+                În dezvoltarea soluțiilor digitale de top
+              </p>
             </div>
             <div className="stat-item">
-              <div className="text-blue-600 text-6xl font-bold">300+</div>
-              <div className="text-xl font-semibold">Proiecte Finalizate</div>
-              <p>Pentru clienți din diverse industrii</p>
+              <div className="text-blue-500 text-5xl md:text-6xl font-bold">
+                300+
+              </div>
+              <div className="text-lg md:text-xl font-semibold mt-2">
+                Proiecte Finalizate
+              </div>
+              <p className="text-gray-300">
+                Pentru clienți din diverse industrii
+              </p>
             </div>
             <div className="stat-item">
-              <div className="text-blue-600 text-6xl font-bold">85%</div>
-              <div className="text-xl font-semibold">Clienți Recurenți</div>
-              <p>Se întorc pentru proiecte noi sau extinderi</p>
+              <div className="text-blue-500 text-5xl md:text-6xl font-bold">
+                85%
+              </div>
+              <div className="text-lg md:text-xl font-semibold mt-2">
+                Clienți Recurenți
+              </div>
+              <p className="text-gray-300">
+                Se întorc pentru proiecte noi sau extinderi
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="why-choose-us-section bg-gray-100 py-20">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+      <section className="why-choose-us-section bg-gray-900 text-white py-20 md:py-32">
+        {' '}
+        {/* Darker background */}
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             De Ce Să Ne Alegi
           </h2>
-          <h3 className="text-3xl text-center mb-16">
+          <h3 className="text-2xl md:text-3xl text-center mb-16 text-gray-300">
             Îți Ridicăm Prezența Digitală
           </h3>
-          <p className="text-xl text-center mb-12">
+          <p className="text-lg md:text-xl text-center mb-12 max-w-3xl mx-auto text-gray-300">
             Cu peste un deceniu de experiență în crearea de experiențe digitale
             premium, combinăm expertiza tehnică cu designul inovator pentru a
             oferi soluții care se remarcă în peisajul competitiv de astăzi.
           </p>
           <div className="text-center mb-12">
-            <button className="btn-primary">Descoperă abordarea noastră</button>
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+              Descoperă abordarea noastră
+            </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="feature-item p-6 border rounded-lg">
-              <h4 className="text-2xl font-semibold mb-4">Calitate Premium</h4>
-              <p>
+            <div className="feature-item p-6 border border-gray-700 rounded-lg bg-black hover:border-blue-500 transition duration-300">
+              {' '}
+              {/* Styled feature card */}
+              <h4 className="text-xl font-semibold mb-4 text-blue-500">
+                Calitate Premium
+              </h4>{' '}
+              {/* Accent color */}
+              <p className="text-gray-300">
                 Fiecare proiect este creat cu atenție meticuloasă la detalii,
                 asigurând calitate și performanță excepțională pe toate
                 dispozitivele.
               </p>
             </div>
-            <div className="feature-item p-6 border rounded-lg">
-              <h4 className="text-2xl font-semibold mb-4">Livrare la Timp</h4>
-              <p>
+            <div className="feature-item p-6 border border-gray-700 rounded-lg bg-black hover:border-blue-500 transition duration-300">
+              <h4 className="text-xl font-semibold mb-4 text-blue-500">
+                Livrare la Timp
+              </h4>
+              <p className="text-gray-300">
                 Respectarea strictă a termenelor limită cu un management
                 transparent al proiectelor menține obiectivele afacerii tale pe
                 drumul cel bun.
               </p>
             </div>
-            <div className="feature-item p-6 border rounded-lg">
-              <h4 className="text-2xl font-semibold mb-4">
+            <div className="feature-item p-6 border border-gray-700 rounded-lg bg-black hover:border-blue-500 transition duration-300">
+              <h4 className="text-xl font-semibold mb-4 text-blue-500">
                 Abordare Personalizată
               </h4>
-              <p>
-                Fiecare client primește o strategie adaptată nevoilor specifice
+              <p className="text-gray-300">
+                Fiecare client primește o strategia adaptată nevoilor specifice
                 ale afacerii, obiectivelor și publicului țintă.
               </p>
             </div>
@@ -285,71 +414,80 @@ const Home: React.FC = () => {
       </section>
 
       {/* Recent Projects Section */}
-      <section className="recent-projects-section py-20">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
+      <section className="recent-projects-section py-20 md:py-32 bg-black text-white">
+        {' '}
+        {/* Dark background */}
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Proiecte Recente
           </h2>
-          <h3 className="text-3xl text-center mb-16">
+          <h3 className="text-2xl md:text-3xl text-center mb-16 text-gray-300">
             Lucrări de Care Suntem Mândri
           </h3>
           <div className="text-center mb-12">
-            <button className="btn-secondary">Vezi toate proiectele</button>
+            <button className="border border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-black transition duration-300 text-lg">
+              Vezi toate proiectele
+            </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="project-item border rounded-lg overflow-hidden">
+            <div className="project-item border border-gray-700 rounded-lg overflow-hidden bg-gray-900 hover:border-blue-500 transition duration-300">
+              {' '}
+              {/* Styled project card */}
               {/* Replace with actual image tag */}
-              <div className="project-image h-48 bg-gray-300 flex items-center justify-center">
+              <div className="project-image h-48 bg-gray-700 flex items-center justify-center text-gray-400">
                 Image Placeholder
-              </div>
+              </div>{' '}
+              {/* Darker placeholder */}
               <div className="p-6">
-                <h4 className="text-2xl font-semibold mb-2">
+                <h4 className="text-xl font-semibold mb-2">
                   Eco Living - eCommerce
                 </h4>
-                <p className="text-blue-600 mb-4">Dezvoltare Web & eCommerce</p>
-                <p className="mb-4">
+                <p className="text-blue-500 mb-4">Dezvoltare Web & eCommerce</p>{' '}
+                {/* Accent color */}
+                <p className="mb-4 text-gray-300">
                   Magazin online complet pentru produse eco, cu sistem de plată
                   integrat și optimizare SEO
                 </p>
-                <a href="#" className="text-blue-600 hover:underline">
+                <a href="#" className="text-blue-500 hover:underline">
                   Vezi detalii
-                </a>
+                </a>{' '}
+                {/* Accent color */}
               </div>
             </div>
-            <div className="project-item border rounded-lg overflow-hidden">
+            <div className="project-item border border-gray-700 rounded-lg overflow-hidden bg-gray-900 hover:border-blue-500 transition duration-300">
               {/* Replace with actual image tag */}
-              <div className="project-image h-48 bg-gray-300 flex items-center justify-center">
+              <div className="project-image h-48 bg-gray-700 flex items-center justify-center text-gray-400">
                 Image Placeholder
               </div>
               <div className="p-6">
-                <h4 className="text-2xl font-semibold mb-2">
+                <h4 className="text-xl font-semibold mb-2">
                   Business Consulting Group
                 </h4>
-                <p className="text-blue-600 mb-4">Design UI/UX & Dezvoltare</p>
-                <p className="mb-4">
+                <p className="text-blue-500 mb-4">Design UI/UX & Dezvoltare</p>
+                <p className="mb-4 text-gray-300">
                   Website corporativ cu design premium și sistem CMS
                   personalizat
                 </p>
-                <a href="#" className="text-blue-600 hover:underline">
+                <a href="#" className="text-blue-500 hover:underline">
                   Vezi detalii
                 </a>
               </div>
             </div>
-            <div className="project-item border rounded-lg overflow-hidden">
+            <div className="project-item border border-gray-700 rounded-lg overflow-hidden bg-gray-900 hover:border-blue-500 transition duration-300">
               {/* Replace with actual image tag */}
-              <div className="project-image h-48 bg-gray-300 flex items-center justify-center">
+              <div className="project-image h-48 bg-gray-700 flex items-center justify-center text-gray-400">
                 Image Placeholder
               </div>
               <div className="p-6">
-                <h4 className="text-2xl font-semibold mb-2">
+                <h4 className="text-xl font-semibold mb-2">
                   Health Connect App
                 </h4>
-                <p className="text-blue-600 mb-4">Aplicație Web & Mobile</p>
-                <p className="mb-4">
-                  Platformă medicală de programări și consultații online cu
+                <p className="text-blue-500 mb-4">Aplicație Web & Mobile</p>
+                <p className="mb-4 text-gray-300">
+                  Platformă medicală de programări și consultații online с
                   interfață intuitivă
                 </p>
-                <a href="#" className="text-blue-600 hover:underline">
+                <a href="#" className="text-blue-500 hover:underline">
                   Vezi detalii
                 </a>
               </div>
@@ -359,22 +497,29 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials-section bg-gray-100 py-20">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12">Testimoniale Clienți</h2>
-          <p className="text-xl mb-16">
+      <section className="testimonials-section bg-gray-900 text-white py-20 md:py-32">
+        {' '}
+        {/* Darker background */}
+        <div className="container mx-auto text-center px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">
+            Testimoniale Clienți
+          </h2>
+          <p className="text-lg md:text-xl mb-16 max-w-2xl mx-auto text-gray-300">
             Află ce spun clienții noștri despre experiența de a lucra с нами.
           </p>
-          <div className="testimonial-card max-w-2xl mx-auto p-8 border rounded-lg shadow-lg">
-            <p className="text-lg italic mb-6">
+          <div className="testimonial-card max-w-2xl mx-auto p-8 border border-gray-700 rounded-lg shadow-lg bg-black">
+            {' '}
+            {/* Styled testimonial card */}
+            <p className="text-lg italic mb-6 text-gray-300">
               "Colaborarea cu această echipă ne-a transformat complet prezența
               online. Atenția lor la detalii și abordarea strategică a
               redesign-ului site-ului nostru a dus la o creștere a conversiilor
               cu 45% în doar trei luni."
             </p>
             <div className="author-info">
-              <div className="font-semibold">Alexandra Richards</div>
-              <div className="text-gray-600">CEO, TechVision</div>
+              <div className="font-semibold text-white">Alexandra Richards</div>
+              <div className="text-gray-400">CEO, TechVision</div>{' '}
+              {/* Lighter gray for title */}
             </div>
           </div>
           {/* Add navigation arrows here if needed */}
@@ -382,40 +527,61 @@ const Home: React.FC = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="cta-section py-20 text-center">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold mb-8">
+      <section className="cta-section py-20 md:py-32 text-center bg-black text-white">
+        {' '}
+        {/* Dark background */}
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Transformă-ți Viziunea în Realitate Digitală
           </h2>
-          <p className="text-xl mb-12">
+          <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-gray-300">
             Hai să colaborăm pentru a crea experiențe digitale care îți
             propulsează afacerea spre succes.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="btn-primary">Contactează-ne</button>
-            <button className="btn-secondary">Începe acum</button>
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+              Contactează-ne
+            </button>
+            <button className="border border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-black transition duration-300 text-lg">
+              Începe acum
+            </button>
           </div>
         </div>
       </section>
 
       {/* Footer Section */}
-      <footer className="site-footer bg-gray-800 text-white py-12">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="site-footer bg-gray-900 text-white py-12 md:py-16">
+        {' '}
+        {/* Darker background, increased padding */}
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
           <div className="footer-about">
-            <div className="logo text-2xl font-bold mb-4">Logitect</div>
-            <p className="mb-4">
+            <div className="logo text-2xl font-bold mb-4 text-blue-500">
+              Logitect
+            </div>{' '}
+            {/* Accent color */}
+            <p className="mb-4 text-gray-300">
               Soluții digitale premium și dezvoltare web realizate cu precizie
               și expertiză.
             </p>
             <div className="social-links flex space-x-4">
               {/* Replace with actual social icons/links */}
-              <a href="#" className="text-white hover:text-blue-400">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-blue-500 transition duration-300"
+              >
                 Twitter
-              </a>
-              <a href="#" className="text-white hover:text-blue-400">
+              </a>{' '}
+              {/* Styled social links */}
+              <a
+                href="#"
+                className="text-gray-400 hover:text-blue-500 transition duration-300"
+              >
                 LinkedIn
               </a>
-              <a href="#" className="text-white hover:text-blue-400">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-blue-500 transition duration-300"
+              >
                 GitHub
               </a>
             </div>
@@ -424,27 +590,43 @@ const Home: React.FC = () => {
             <h5 className="text-xl font-semibold mb-4">Companie</h5>
             <ul>
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Despre noi
                 </a>
-              </li>
+              </li>{' '}
+              {/* Styled footer links */}
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Servicii
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Portofoliu
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Prețuri
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Blog
                 </a>
               </li>
@@ -454,22 +636,34 @@ const Home: React.FC = () => {
             <h5 className="text-xl font-semibold mb-4">Resurse</h5>
             <ul>
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Proces
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Întrebări frecvente
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Termeni
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-blue-400">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-500 transition duration-300"
+                >
                   Confidențialitate
                 </a>
               </li>
@@ -477,21 +671,30 @@ const Home: React.FC = () => {
           </div>
           <div className="footer-contact">
             <h5 className="text-xl font-semibold mb-4">Contact</h5>
-            <p className="mb-2">123 Bulevardul Digital, Sectorul Tech</p>
-            <p className="mb-2">+40 (755) 555-555</p>
-            <p className="mb-2">contact@logitect.ro</p>
+            <p className="mb-2 text-gray-300">
+              123 Bulevardul Digital, Sectorul Tech
+            </p>
+            <p className="mb-2 text-gray-300">+40 (755) 555-555</p>
+            <p className="mb-2 text-gray-300">contact@logitect.ro</p>
           </div>
         </div>
-        <div className="container mx-auto text-center mt-8 border-t border-gray-700 pt-8">
-          <p>© 2025 Logitect. Toate drepturile rezervate.</p>
-          <div className="footer-bottom-links mt-2 space-x-4">
-            <a href="#" className="text-white hover:text-blue-400">
+        <div className="container mx-auto text-center mt-8 border-t border-gray-700 pt-8 px-4">
+          {' '}
+          {/* Added border and padding */}
+          <p className="text-gray-400">
+            © 2025 Logitect. Toate drepturile rezervate.
+          </p>{' '}
+          {/* Lighter gray */}
+          <div className="footer-bottom-links mt-2 space-x-4 text-gray-400">
+            {' '}
+            {/* Lighter gray */}
+            <a href="#" className="hover:text-blue-500 transition duration-300">
               Termeni și Condiții
             </a>
-            <a href="#" className="text-white hover:text-blue-400">
+            <a href="#" className="hover:text-blue-500 transition duration-300">
               Politica de Confidențialitate
             </a>
-            <a href="#" className="text-white hover:text-blue-400">
+            <a href="#" className="hover:text-blue-500 transition duration-300">
               Politica de Cookie-uri
             </a>
           </div>
