@@ -1,4 +1,9 @@
-import express from 'express'
+import express, {
+  Request,
+  Response,
+  NextFunction,
+  RequestHandler,
+} from 'express'
 import { PrismaClient } from '../generated/prisma' // Убедитесь, что путь правильный
 
 const router = express.Router()
@@ -60,5 +65,54 @@ router.get('/api/contact', async (req, res) => {
 router.get('/api/estimation', async (req, res) => {
   await getPageBySlug('estimation', res) // Предполагаем, что slug для оценки стоимости - 'estimation'
 })
+
+interface EstimationFormBody {
+  name: string
+  email: string
+  description: string
+}
+
+// Новый маршрут для обработки формы оценки стоимости
+router.post('/api/forms/estimation', (async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { name, email, description } = req.body as EstimationFormBody
+
+  // Базовая валидация данных
+  if (!name || !email || !description) {
+    return res.status(400).json({ message: 'Пожалуйста, заполните все поля.' })
+  }
+
+  // Базовая валидация email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return res
+      .status(400)
+      .json({ message: 'Пожалуйста, введите корректный email.' })
+  }
+
+  try {
+    const newForm = await prisma.forms.create({
+      data: {
+        type: 'cost_estimate',
+        data: {
+          name,
+          email,
+          description,
+        },
+      },
+    })
+    res
+      .status(201)
+      .json({ message: 'Данные формы успешно сохранены.', form: newForm })
+  } catch (error) {
+    console.error('Ошибка при сохранении данных формы:', error)
+    res
+      .status(500)
+      .json({ message: 'Ошибка сервера при сохранении данных формы.' })
+  }
+}) as RequestHandler)
 
 export default router
